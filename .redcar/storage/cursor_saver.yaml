@@ -1,0 +1,42 @@
+--- 
+cursor_positions: 
+  - :path: project.clj
+    :cursor_offset: 166
+    :timestamp: 2012-02-10 23:31:07 -06:00
+  - :path: src/sensus/core.clj
+    :cursor_offset: 17
+    :timestamp: 2012-02-10 19:34:02 -06:00
+    :selection_offset: 0
+    :block_selection_mode: false
+  - :path: src/sensus/views/welcome.clj
+    :cursor_offset: 186
+    :timestamp: 2012-02-11 15:06:57 -06:00
+    :selection_offset: 272
+    :block_selection_mode: false
+  - :path: src/sensus/views/contacts.clj
+    :cursor_offset: 170
+    :timestamp: 2012-02-12 14:44:24 -06:00
+  - :path: src/sensus/server.clj
+    :cursor_offset: 296
+    :timestamp: 2012-02-12 14:43:10 -06:00
+  - :path: src/sensus/views/index.clj
+    :cursor_offset: 844
+    :timestamp: 2012-02-12 14:44:30 -06:00
+  - :path: src/sensus/views/New File
+    :cursor_offset: 0
+    :timestamp: 2012-02-12 15:13:53 -06:00
+  - :path: src/sensus/views/polls.clj
+    :cursor_offset: 1430
+    :timestamp: 2012-02-12 15:42:11 -06:00
+    :selection_offset: 1501
+    :block_selection_mode: false
+  - :path: scrap/polls.txt
+    :cursor_offset: 2187
+    :timestamp: 2012-02-12 17:19:49 -06:00
+  - :path: src/sensus/views/routes.clj
+    :cursor_offset: 1712
+    :timestamp: 2012-02-12 22:44:27 -06:00
+  - :path: src/sensus/views/common.clj
+    :cursor_offset: 351
+    :timestamp: 2012-02-11 01:15:47 -06:00
+files_to_retain: 0

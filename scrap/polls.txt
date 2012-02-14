@@ -1,0 +1,95 @@
+(ns sensus.views.index
+  (use noir.core
+    hiccup.core
+    hiccup.page-helpers)
+  (:use somnium.congomongo)
+  (:use [somnium.congomongo.config :only [*mongo-config*]]))
+  
+
+;; GET /polls
+;; hypermedia URI to each poll
+(defpage [:get "/polls"] [] 
+  list-polls
+)
+
+;; GET /polls/<pid>
+;; poll title, body
+;; hypermedia URI to questions
+(defpage [:get ["/polls/:pid" :pid #"\d+"]] {:keys [pid]} 
+  (response/json 
+    (poll-as-json 
+      (find-poll pid))
+  (response/empty))
+
+;; GET /polls/<pid>/questions
+;; hypermedia URI to questions/<qid>
+(defpage [:get ["/polls/:pid/questions" :pid #"\d+"]] {:keys [pid]} 
+  (response/json 
+    (map question-as-json
+      (list-questions [pid])))
+  (response/empty))
+  
+;; GET /polls/<pid>/questions/<qid>
+;; question title, body
+;; hypermedia URI to answers/<aid>
+(defpage [:get ["/polls/:pid/questions/:quid" :pid #"\d+" :qid #"\d+"]] {:keys [pid, qid]} 
+  (response/json 
+    (question-as-json
+      (find-question [pid, qid])))
+  (response/empty))
+
+
+;; GET /polls/<pid>/questions/<qid>/answers
+(defpage [:get ["/polls/:pid/questions/:quid/answers" :pid #"\d+" :qid #"\d+"]] {:keys [pid, qid]} 
+  (response/json 
+    (map answer-as-json
+      (list-answers [pid, qid])))
+  (response/empty))
+
+;; GET /polls/<pid>/questions/<qid>/answers/<aid>
+(defpage [:get ["/polls/:pid/questions/:quid/answers/:aid" :pid #"\d+" :qid #"\d+" :aid #"\d+"]] {:keys [pid, qid, aid]} 
+  (response/json 
+    (answer-as-json
+      (find-answer [pid, qid, aid])))
+  (response/empty))
+
+
+;; POST /vote
+;; POST expects pid, qid, aid, and cid
+(defpage [:post ["/vote"]] {:keys [pid quid aid cid]} 
+  (str "This is a get"))
+
+;; list-polls
+(defn list-polls [] 
+  (str "placeholder list-polls")
+)
+
+;; list-questions
+(defn list-questions [] 
+  (str "placeholder list-questions")
+)
+
+;; list-answers
+(defn list-answers [] 
+  (str "placeholder list-answers")
+)
+
+;; poll-as-json
+(defn poll-as-json [] 
+  (str "placeholder poll-as-json")
+)
+
+;; question-as-json
+(defn question-as-json [] 
+  (str "placeholder question-as-json")
+)
+
+;; answer-as-json
+(defn answer-as-json [] 
+  (str "placeholder answer-as-json")
+)
+
+;; post-vote
+(defn post-vote []
+  (str "placeholder for post-vote")
+)
